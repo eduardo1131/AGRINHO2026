@@ -1,24 +1,241 @@
-/* --- CONFIGURAÇÕES GERAIS E PALETA DE CORES --- */:root {    --verde-principal: #2d6a4f;    --verde-claro: #52b788;    --verde-fundo: #f4f9f4;    --azul-agua: #0077b6;    --cinza-escuro: #2b2d42;    --branco: #ffffff;    --transicao: all 0.3s ease;}
-* {    margin: 0;    padding: 0;    box-sizing: border-box;    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
-html {    scroll-behavior: smooth;}
-body {    background-color: var(--verde-fundo);    color: var(--cinza-escuro);    line-height: 1.6;}
-.container {    width: 90%;    max-width: 1200px;    margin: 0 auto;    padding: 40px 0;}
-/* --- HEADER & NAVEGAÇÃO --- */header {    background-color: var(--branco);    box-shadow: 0 2px 10px rgba(0,0,0,0.1);    position: sticky;    top: 0;    z-index: 1000;}
-.nav-container {    display: flex;    justify-content: space-between;    align-items: center;    padding: 20px 5%;}
-.logo {    font-size: 1.5rem;    font-weight: bold;    color: var(--verde-principal);    text-decoration: none;}
-.nav-links {    display: flex;    list-style: none;    gap: 20px;}
-.nav-links a {    text-decoration: none;    color: var(--cinza-escuro);    font-weight: 500;    transition: var(--transicao);}
-.nav-links a:hover {    color: var(--verde-claro);}
-/* --- HERO / BANNER PRINCIPAL --- */.hero {    background: linear-gradient(rgba(45, 106, 79, 0.8), rgba(43, 45, 66, 0.8)), url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;    height: 70vh;    display: flex;    justify-content: center;    align-items: center;    text-align: center;    color: var(--branco);    padding: 0 20px;}
-.hero-content h1 {    font-size: 3rem;    margin-bottom: 20px;}
-.hero-content p {    font-size: 1.2rem;    margin-bottom: 30px;    max-width: 600px;    margin-left: auto;    margin-right: auto;}
-.btn {    display: inline-block;    background-color: var(--verde-claro);    color: var(--branco);    padding: 12px 30px;    text-decoration: none;    border-radius: 5px;    font-weight: bold;    transition: var(--transicao);}
-.btn:hover {    background-color: var(--verde-principal);    transform: translateY(-2px);}
-/* --- SEÇÃO SOBRE --- */.sobre {    text-align: center;    background-color: var(--branco);}
-.sobre h2, .recursos h2 {    color: var(--verde-principal);    margin-bottom: 20px;    font-size: 2rem;}
-/* --- CARDS DE RECURSOS --- */.recursos-grid {    display: grid;    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));    gap: 30px;    margin-top: 40px;}
-.card {    background-color: var(--branco);    padding: 30px;    border-radius: 8px;    box-shadow: 0 4px 15px rgba(0,0,0,0.05);    transition: var(--transicao);    border-top: 5px solid var(--verde-claro);}
-.card:hover {    transform: translateY(-5px);    box-shadow: 0 8px 25px rgba(0,0,0,0.1);}
-.card h3 {    color: var(--verde-principal);    margin-bottom: 15px;}
-/* --- FOOTER --- */footer {    background-color: var(--cinza-escuro);    color: var(--branco);    text-align: center;    padding: 20px 0;    margin-top: 40px;}
-/* --- RESPONSIVIDADE --- */@media (max-width: 768px) {    .nav-container {        flex-direction: column;        gap: 15px;    }    .hero-content h1 {        font-size: 2rem;    }}
+/* CONFIGURAÇÕES GERAIS E RESETS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --verde-principal: #2e7d32;
+    --verde-claro: #4caf50;
+    --azul-agua: #0288d1;
+    --cinza-escuro: #212121;
+    --cinza-claro: #f5f5f5;
+    --branco: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--branco);
+    color: var(--cinza-escuro);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: var(--branco);
+    padding: 1.2rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--verde-principal);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--azul-agua);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--cinza-escuro);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--verde-principal);
+}
+
+/* HERO BANNER */
+.hero {
+    margin-top: 70px;
+    height: 80vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), 
+                url('https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--branco);
+    padding: 0 1rem;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--verde-claro);
+    color: var(--branco);
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--verde-principal);
+    transform: translateY(-2px);
+}
+
+/* SEÇÃO IMPACTO (GRID DE COLUNAS) */
+.impacto-section {
+    padding: 5rem 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    color: var(--verde-principal);
+}
+
+.grid-impacto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--cinza-claro);
+    padding: 2.5rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.icon-box {
+    font-size: 2.5rem;
+    color: var(--azul-agua);
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+/* SEÇÃO DO QUIZ */
+.quiz-section {
+    background-color: #e8f5e9;
+    padding: 5rem 0;
+}
+
+.quiz-container {
+    display: flex;
+    justify-content: center;
+}
+
+.quiz-box {
+    background-color: var(--branco);
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+}
+
+.quiz-box h2 {
+    color: var(--verde-principal);
+    margin-bottom: 0.5rem;
+}
+
+.quiz-box > p {
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.btn-quiz {
+    background-color: var(--azul-agua);
+}
+
+.btn-quiz:hover {
+    background-color: #0277bd;
+}
+
+.pergunta-texto {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.opcoes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.opcao-btn {
+    background-color: var(--cinza-claro);
+    border: 2px solid #e0e0e0;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s;
+}
+
+.opcao-btn:hover {
+    background-color: #e3f2fd;
+    border-color: var(--azul-agua);
+}
+
+.feedback i {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.correto i { color: var(--verde-claro); }
+.incorreto i { color: #d32f2f; }
+
+.feedback p {
+    margin: 1rem
