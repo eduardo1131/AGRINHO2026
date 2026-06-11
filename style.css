@@ -1,1 +1,24 @@
-
+/* --- CONFIGURAÇÕES GERAIS E PALETA DE CORES --- */:root {    --verde-principal: #2d6a4f;    --verde-claro: #52b788;    --verde-fundo: #f4f9f4;    --azul-agua: #0077b6;    --cinza-escuro: #2b2d42;    --branco: #ffffff;    --transicao: all 0.3s ease;}
+* {    margin: 0;    padding: 0;    box-sizing: border-box;    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+html {    scroll-behavior: smooth;}
+body {    background-color: var(--verde-fundo);    color: var(--cinza-escuro);    line-height: 1.6;}
+.container {    width: 90%;    max-width: 1200px;    margin: 0 auto;    padding: 40px 0;}
+/* --- HEADER & NAVEGAÇÃO --- */header {    background-color: var(--branco);    box-shadow: 0 2px 10px rgba(0,0,0,0.1);    position: sticky;    top: 0;    z-index: 1000;}
+.nav-container {    display: flex;    justify-content: space-between;    align-items: center;    padding: 20px 5%;}
+.logo {    font-size: 1.5rem;    font-weight: bold;    color: var(--verde-principal);    text-decoration: none;}
+.nav-links {    display: flex;    list-style: none;    gap: 20px;}
+.nav-links a {    text-decoration: none;    color: var(--cinza-escuro);    font-weight: 500;    transition: var(--transicao);}
+.nav-links a:hover {    color: var(--verde-claro);}
+/* --- HERO / BANNER PRINCIPAL --- */.hero {    background: linear-gradient(rgba(45, 106, 79, 0.8), rgba(43, 45, 66, 0.8)), url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;    height: 70vh;    display: flex;    justify-content: center;    align-items: center;    text-align: center;    color: var(--branco);    padding: 0 20px;}
+.hero-content h1 {    font-size: 3rem;    margin-bottom: 20px;}
+.hero-content p {    font-size: 1.2rem;    margin-bottom: 30px;    max-width: 600px;    margin-left: auto;    margin-right: auto;}
+.btn {    display: inline-block;    background-color: var(--verde-claro);    color: var(--branco);    padding: 12px 30px;    text-decoration: none;    border-radius: 5px;    font-weight: bold;    transition: var(--transicao);}
+.btn:hover {    background-color: var(--verde-principal);    transform: translateY(-2px);}
+/* --- SEÇÃO SOBRE --- */.sobre {    text-align: center;    background-color: var(--branco);}
+.sobre h2, .recursos h2 {    color: var(--verde-principal);    margin-bottom: 20px;    font-size: 2rem;}
+/* --- CARDS DE RECURSOS --- */.recursos-grid {    display: grid;    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));    gap: 30px;    margin-top: 40px;}
+.card {    background-color: var(--branco);    padding: 30px;    border-radius: 8px;    box-shadow: 0 4px 15px rgba(0,0,0,0.05);    transition: var(--transicao);    border-top: 5px solid var(--verde-claro);}
+.card:hover {    transform: translateY(-5px);    box-shadow: 0 8px 25px rgba(0,0,0,0.1);}
+.card h3 {    color: var(--verde-principal);    margin-bottom: 15px;}
+/* --- FOOTER --- */footer {    background-color: var(--cinza-escuro);    color: var(--branco);    text-align: center;    padding: 20px 0;    margin-top: 40px;}
+/* --- RESPONSIVIDADE --- */@media (max-width: 768px) {    .nav-container {        flex-direction: column;        gap: 15px;    }    .hero-content h1 {        font-size: 2rem;    }}
